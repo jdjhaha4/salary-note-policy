@@ -38,6 +38,7 @@
     <li>퇴직금·실수령액 등 모든 계산은 기기 안에서 처리됩니다.</li>
     <li>최신 법정 요율(최저임금, 4대보험 요율)을 받아 오기 위해 Google Firebase를 사용합니다. 이때 이용자가 입력한 급여 정보는 전송되지 않습니다.</li>
     <li>무료 제공을 위해 Google AdMob 광고를 표시하며, 이 과정에서 Google이 광고 ID 등 기기 정보를 수집할 수 있습니다.</li>
+    <li>앱 오류를 고치기 위해 오류가 발생하면 Firebase Crashlytics로 오류 기록과 기기 정보를 보냅니다(급여 정보 제외).</li>
   </ul>
 </div>
 
@@ -70,6 +71,12 @@
     <td>최신 법정 요율(최저임금, 4대보험 요율 등)과 앱 설정값 받아 오기</td>
     <td>앱 실행 시 (최대 12시간에 한 번)</td>
   </tr>
+  <tr>
+    <td>Firebase Crashlytics<br>(Google LLC)</td>
+    <td>비정상 종료·오류 기록(오류 내용, 발생 위치, 발생 시각), 기기 모델·OS 버전, 앱 버전, 기기 방향·메모리 등 상태 정보, Firebase 설치 ID (이용자가 입력한 급여·근무 정보와 계산 결과는 전송되지 않음)</td>
+    <td>앱 오류 파악 및 안정성 개선</td>
+    <td>앱에 오류가 발생했을 때</td>
+  </tr>
 </table>
 <p>위 정보의 처리는 Google의 정책을 따릅니다: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google 개인정보처리방침</a>, <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">Google 파트너 사이트에서의 데이터 사용</a>, <a href="https://firebase.google.com/support/privacy" target="_blank" rel="noopener">Firebase 개인정보 보호</a>.</p>
 
@@ -78,9 +85,9 @@
 <table>
   <tr><th>이전받는 자</th><td>Google LLC (연락처: <a href="https://support.google.com/policies/contact/general_privacy_form" target="_blank" rel="noopener">개인정보 문의 양식</a>)</td></tr>
   <tr><th>이전 국가</th><td>미국 등 Google이 데이터센터를 운영하는 국가</td></tr>
-  <tr><th>이전 일시·방법</th><td>앱 사용 중 광고 표시·요율 갱신 시 네트워크를 통해 전송</td></tr>
+  <tr><th>이전 일시·방법</th><td>앱 사용 중 광고 표시·요율 갱신·오류 발생 시 네트워크를 통해 전송</td></tr>
   <tr><th>이전 항목</th><td>3항에 기재된 항목</td></tr>
-  <tr><th>이용 목적</th><td>광고 제공 및 성과 측정, 법정 요율 갱신</td></tr>
+  <tr><th>이용 목적</th><td>광고 제공 및 성과 측정, 법정 요율 갱신, 앱 오류 분석</td></tr>
   <tr><th>보유·이용 기간</th><td>Google의 개인정보처리방침에 따름</td></tr>
 </table>
 <p>국외 이전을 원하지 않으면 앱 사용을 중단하거나 아래 6항의 방법으로 광고 맞춤 설정을 끌 수 있습니다. 다만 광고는 앱 무료 제공에 필요하여 광고 자체를 끌 수는 없습니다.</p>
@@ -101,7 +108,7 @@
 <h2>8. 앱 권한</h2>
 <table>
   <tr><th>권한</th><th>용도</th></tr>
-  <tr><td>인터넷, 네트워크 상태 확인</td><td>광고 표시, 최신 법정 요율 받아 오기</td></tr>
+  <tr><td>인터넷, 네트워크 상태 확인</td><td>광고 표시, 최신 법정 요율 받아 오기, 오류 기록 전송</td></tr>
   <tr><td>광고 ID(AD_ID), 광고 서비스(AdServices)</td><td>Google AdMob의 광고 표시·성과 측정 (6항의 방법으로 제한 가능)</td></tr>
   <tr><td>절전 모드 해제 방지, 포그라운드 서비스</td><td>Google 광고 SDK의 내부 동작용 (앱이 직접 사용하지 않음)</td></tr>
 </table>
@@ -135,6 +142,9 @@
 
 <h2>15. 방침의 변경</h2>
 <p>이 방침이 바뀌면 이 페이지에 변경 내용과 시행일을 게시합니다.</p>
+<ul>
+  <li>2026년 11월 2일: 오류 분석을 위한 Firebase Crashlytics 항목 추가</li>
+</ul>
 <p class="meta">공고일: 2026년 11월 2일 · 시행일: 2026년 11월 2일</p>
 </main>
 </body>
